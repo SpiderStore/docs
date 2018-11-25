@@ -5,7 +5,8 @@ API域名：https://openapi.spider.store
 每个接口的header需要携带鉴权字段secret
 
 ## Platform
-Ethereum、EOS、Tron
+
+区块链平台
 
 |Platform|区块链|
 | --- | --- | 
@@ -17,7 +18,9 @@ Ethereum、EOS、Tron
 ## DApp
 
 **DApp-列表**
+
 -------
+
 获取所有DApp列表
 
 **HTTP Request**
@@ -145,7 +148,9 @@ JSON
 ```
 
 **DApp-日粒度交易数据**
+
 -------
+
 获取DApp按日聚合的交易数据
 
 **HTTP Request**
