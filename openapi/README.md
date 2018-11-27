@@ -17,6 +17,22 @@ API域名：https://openapi.spider.store
 
 ## DApp
 
+#### DApp-分类列表
+
+##### 请求地址
+GET /dapps/categories
+##### URL Query参数
+```json
+{
+}
+```
+##### 返回示例
+```json
+{
+  "data": ["全部", "游戏", "交易市场", "竞猜", "社交", "其它"]
+}
+```
+
 **DApp-列表**
 
 -------
