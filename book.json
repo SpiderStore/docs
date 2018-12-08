@@ -1,0 +1,12 @@
+{
+ "plugins": [
+    "-autotheme",
+    "-fancybox",
+    "-lunr",
+    "-fontsettings",
+    "-sharing",
+    "-search",
+    "mathjax"
+  ]
+}
+
