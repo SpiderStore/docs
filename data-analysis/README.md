@@ -12,13 +12,13 @@ DApp的去重用户数
 ```
 
 ##### Ethereum以太坊
-au = unique(fromAddress(tx))
+ua = unique(fromAddress(tx))
 
 ##### EOS柚子
-au = unique(actorOfTransferEOS(action) or actorOfAccount(action))
+ua = unique(actorOfTransferEOS(action) or actorOfTransferToken(action) or actorOfAccount(action) )
 
 ##### Tron波场
-au = unique(ownerAddress(contract))
+ua = unique(ownerAddress(contract))
 
 contract: TransferAssetContract、TransferContract、TriggerSmartContract
 
@@ -50,7 +50,7 @@ DApp'交易次数/合约调用次数'
 tx = count(tx)
 
 ##### EOS柚子
-tx = count(eosTransfer(action) + actorOfAccount(action)) 
+tx = count(eosTransfer(action) + actorOfAccount(action)+ tokenTransfer(action)) 
 
 ##### Tron波场
 tx = count(contract)
