@@ -156,7 +156,9 @@ JSON
       "contact": null
     },
     //必有，dapp详情地址
-    "url": "https://www.spider.store/dapps/5b46236f07cf996624126138"
+    "url": "https://www.spider.store/dapps/5b46236f07cf996624126138",
+    //必有，dapp官网地址
+    "website": "https://play.0xuniverse.com/",
   }]
 }
 ```
@@ -267,6 +269,8 @@ JSON
     },
     //必有，dapp详情地址
     "url": "https://www.spider.store/dapps/5b46236f07cf996624126138"
+    //必有，dapp官网地址
+    "website": "https://play.0xuniverse.com/",
   }
 }
 ```
