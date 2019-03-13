@@ -49,6 +49,7 @@ GET /dapps
 | page_size | 10 | 每页条目数 |
 | category | 全部 | 可选,不传查所有分类 | 根据分类筛选dapp |
 | platform | Ethereum | 可选,不传查Ethereum |根据平台筛选dapp|
+| name |  | 可选,默认不传 |根据平台筛选dapp|
 
 **Response**
 
