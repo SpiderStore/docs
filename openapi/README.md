@@ -8,11 +8,11 @@ API域名：https://openapi.spider.store
 
 区块链平台
 
-|Platform|区块链|
-| --- | --- | 
-|Ethereum|以太坊|
-|EOS|柚子|
-|Tron|波场|
+| Platform | 区块链 |
+|----------|--------|
+| Ethereum | 以太坊 |
+| EOS      | 柚子   |
+| Tron     | 波场   |
 
 
 ## DApp
@@ -43,13 +43,13 @@ GET /dapps
 
 **Query Parameters**
 
-|Parameter|Default|Description|
-| --- | --- | --- |
-| current | 1 | 起始页 |
-| page_size | 10 | 每页条目数 |
-| category | 全部 | 可选,不传查所有分类 | 根据分类筛选dapp |
-| platform | Ethereum | 可选,不传查Ethereum |根据平台筛选dapp|
-| name |  | 可选,默认不传 |根据 dapp名称 筛选dapp|
+| Parameter | Default  | Description                          |
+|-----------|----------|--------------------------------------|
+| current   | 1        | 起始页                               |
+| page_size | 10       | 每页条目数                           |
+| category  | 全部     | 可选,不传查所有分类|根据分类筛选dapp |
+| platform  | Ethereum | 可选,不传查Ethereum|根据平台筛选dapp |
+| name      |          | 可选,默认不传|根据 dapp名称 筛选dapp |
 
 **Response**
 
@@ -102,7 +102,15 @@ JSON
         //必有，合约地址
         "address": "prochaintech",
         //必有，合约类型。Ethereum、EOS
-        "type": "EOS"
+        "type": "EOS",
+        //EOS必有，审计状态 PASSED 已审计 FAILED 未审计  UNKNOWN未审计
+        "audit_status": "UNKNOWN", 
+        //EOS必有，一致性状态  PASSED 校验通过 DIFFERENT不一致 CLOSED_SOURCE 未校验  UNKNOWN未校验
+        "consistency_status": "UNKNOWN",
+        //Ethereum必有  评分(小于3分安全性低,3-4分安全性一般，大于4分安全性高) null 没有评分
+        "rating": 4.7,
+        //Ethereum必有  是否开源 YES/NO  UNKNOWN不展示
+        "opensource": "YES"
       }
     ],
     //必有，eos数据
@@ -265,7 +273,15 @@ JSON
         //必有，合约地址
         "address": "prochaintech",
         //必有，合约类型。Ethereum、EOS
-        "type": "EOS"
+        "type": "EOS",
+        //EOS必有，审计状态 PASSED 已审计 FAILED 未审计  UNKNOWN未审计
+        "audit_status": "UNKNOWN", 
+        //EOS必有，一致性状态  PASSED 校验通过 DIFFERENT不一致 CLOSED_SOURCE 未校验  UNKNOWN未校验
+        "consistency_status": "UNKNOWN",
+        //Ethereum必有  评分(小于3分安全性低,3-4分安全性一般，大于4分安全性高) null 没有评分
+        "rating": 4.7,
+        //Ethereum必有  是否开源 YES/NO  UNKNOWN不展示
+        "opensource": "YES"
       }
     ],
     //必有，eos数据
@@ -390,10 +406,10 @@ GET /dapps/{id}/{platform}/daily_transactions
 
 **Query Parameters**
 
-|Parameter|Default|Description|
-| --- | --- | --- |
-| start_time | 1514736000 | 起始时间戳，默认30天前（包含） |
-| end_time | 1515254400 | //可选，结束时间戳，默认今天（不包含）|
+| Parameter  | Default    | Description                            |
+|------------|------------|----------------------------------------|
+| start_time | 1514736000 | 起始时间戳，默认30天前（包含）         |
+| end_time   | 1515254400 | //可选，结束时间戳，默认今天（不包含） |
 
 **Response**
 
