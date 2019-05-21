@@ -70,6 +70,10 @@ JSON
     "id": "5b95db7a855f0800121267c3",
     //必有，dapp名称
     "name": "PRA CandyBox",
+    //必有，dapp英文名称
+    "name_en": "PRA CandyBox",
+    //必有，dapp中文名称
+    "name_zh_cn": "PRA CandyBox",
     //必有，dapp所属分类集合
     "categories": [],
     //必有，dapp标签集合
@@ -241,6 +245,10 @@ JSON
     "id": "5b95db7a855f0800121267c3",
     //必有，dapp名称
     "name": "PRA CandyBox",
+    //必有，dapp英文名称
+    "name_en": "PRA CandyBox",
+    //必有，dapp中文名称
+    "name_zh_cn": "PRA CandyBox",
     //必有，dapp所属分类集合
     "categories": [],
     //必有，dapp标签集合
