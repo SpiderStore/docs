@@ -1,8 +1,10 @@
 # SpiderStore OpenAPI
-API域名：https://openapi.spider.store
+
+API 域名：https://openapi.spider.store
 
 ## Authentication
-每个接口的header需要携带鉴权字段secret
+
+每个接口的 header 需要携带鉴权字段 secret
 
 ## Platform
 
@@ -14,10 +16,10 @@ API域名：https://openapi.spider.store
 | EOS      | 柚子   |
 | Tron     | 波场   |
 
-
 ## DApp
 
-#### DApp-分类列表
+#### DApp- 分类列表
+
 -------
 **HTTP Request**
 GET /dapps/categories
@@ -25,17 +27,18 @@ GET /dapps/categories
 **Response**
 
 JSON
+
 ```json
 {
   "data": ["全部", "游戏", "交易市场", "竞猜", "社交", "其它"]
 }
 ```
 
-#### DApp-列表
+#### DApp- 列表
 
 -------
 
-获取所有DApp列表
+获取所有 DApp 列表
 
 **HTTP Request**
 
@@ -47,13 +50,14 @@ GET /dapps
 |-----------|----------|--------------------------------------|
 | current   | 1        | 起始页                               |
 | page_size | 10       | 每页条目数                           |
-| category  | 全部     | 可选,不传查所有分类|根据分类筛选dapp |
-| platform  | Ethereum | 可选,不传查Ethereum|根据平台筛选dapp |
-| name      |          | 可选,默认不传|根据 dapp名称 筛选dapp |
+| category  | 全部     | 可选，不传查所有分类|根据分类筛选 dapp |
+| platform  | Ethereum | 可选，不传查 Ethereum|根据平台筛选 dapp |
+| name      |          | 可选，默认不传|根据 dapp 名称 筛选 dapp |
 
 **Response**
 
 JSON
+
 ```json
 {
   //必有，是否存在下一页
@@ -107,13 +111,13 @@ JSON
         "address": "prochaintech",
         //必有，合约类型。Ethereum、EOS
         "type": "EOS",
-        //EOS必有，审计状态 PASSED 已审计 FAILED 未审计  UNKNOWN未审计
-        "audit_status": "UNKNOWN", 
-        //EOS必有，一致性状态  PASSED 校验通过 DIFFERENT不一致 CLOSED_SOURCE 未校验  UNKNOWN未校验
+        //type为EOS时必有，审计状态 PASSED 已审计 FAILED 未审计 UNKNOWN未审计
+        "audit_status": "UNKNOWN",
+        //type为EOS时必有，一致性状态  PASSED 校验通过 DIFFERENT不一致 CLOSED_SOURCE未校验 UNKNOWN未校验
         "consistency_status": "UNKNOWN",
-        //Ethereum必有  评分(小于3分安全性低,3-4分安全性一般，大于4分安全性高) null 没有评分
+        //type为Ethereum时必有 评分(小于3分安全性低,3-4分安全性一般，大于4分安全性高) null没有评分
         "rating": 4.7,
-        //Ethereum必有  是否开源 YES/NO  UNKNOWN不展示
+        //type为Ethereum时必有 是否开源YES/NO UNKNOWN不展示
         "opensource": "YES"
       }
     ],
@@ -226,7 +230,7 @@ JSON
 }
 ```
 
-#### DApp-详情
+#### DApp- 详情
 
 -------
 
@@ -236,8 +240,8 @@ GET /dapps/{id}
 
 **Response**
 
-
 JSON
+
 ```json
 {
   "data": {
@@ -282,13 +286,13 @@ JSON
         "address": "prochaintech",
         //必有，合约类型。Ethereum、EOS
         "type": "EOS",
-        //EOS必有，审计状态 PASSED 已审计 FAILED 未审计  UNKNOWN未审计
-        "audit_status": "UNKNOWN", 
-        //EOS必有，一致性状态  PASSED 校验通过 DIFFERENT不一致 CLOSED_SOURCE 未校验  UNKNOWN未校验
+        //type为EOS时必有，审计状态 PASSED 已审计 FAILED 未审计 UNKNOWN未审计
+        "audit_status": "UNKNOWN",
+        //type为EOS时必有，一致性状态  PASSED 校验通过 DIFFERENT不一致 CLOSED_SOURCE未校验 UNKNOWN未校验
         "consistency_status": "UNKNOWN",
-        //Ethereum必有  评分(小于3分安全性低,3-4分安全性一般，大于4分安全性高) null 没有评分
+        //type为Ethereum时必有 评分(小于3分安全性低,3-4分安全性一般，大于4分安全性高) null没有评分
         "rating": 4.7,
-        //Ethereum必有  是否开源 YES/NO  UNKNOWN不展示
+        //type为Ethereum时必有 是否开源YES/NO UNKNOWN不展示
         "opensource": "YES"
       }
     ],
@@ -401,12 +405,11 @@ JSON
 }
 ```
 
-
-#### DApp-日粒度交易数据
+#### DApp- 日粒度交易数据
 
 -------
 
-获取DApp按日聚合的交易数据
+获取 DApp 按日聚合的交易数据
 
 **HTTP Request**
 
@@ -416,18 +419,19 @@ GET /dapps/{id}/{platform}/daily_transactions
 
 | Parameter  | Default    | Description                            |
 |------------|------------|----------------------------------------|
-| start_time | 1514736000 | 起始时间戳，默认30天前（包含）         |
-| end_time   | 1515254400 | //可选，结束时间戳，默认今天（不包含） |
+| start_time | 1514736000 | 起始时间戳，默认 30 天前（包含）         |
+| end_time   | 1515254400 | // 可选，结束时间戳，默认今天（不包含） |
 
 **Response**
 
 JSON
+
 ```json
 {
     //必有，默认：[]
     "data": [
         {
-            //必有，用户活跃数 
+            //必有，用户活跃数
             "ua": 1417,
             //必有，交易数
             "tx": 9580,
